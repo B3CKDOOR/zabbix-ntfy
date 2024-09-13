@@ -49,8 +49,20 @@ zabbix_export:
                 {name: 'disaster'}
           ];
           
+          // Check if a value is an int for input validation
+          function isInt(value) {
+            return !isNaN(value) && 
+                  parseInt(Number(value)) == value && 
+                  !isNaN(parseInt(value, 10));
+          }
+        
+          // Input validation
           if (!params.URL) {
               throw 'Cannot get ntfy url!';
+          }
+        
+          if (!isInt(params.Nseverity) || params.Nseverity < 0 || params.Nseverity > 5){
+              throw 'Nseverity value must be passed as an int from 0-5';
           }
         
           var response, request = new HttpRequest();
