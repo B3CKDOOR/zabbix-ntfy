@@ -19,7 +19,7 @@ zabbix_export:
         - name: URL
           value: '{$NTFY.URL}'
         - name: Topic
-          value: '{$ALERT.SENDTO}'
+          value: '{ALERT.SENDTO}'
       script: |
         try {
           Zabbix.log(4, '[ ntfy Webhook ] Executed with params: ' + value);
