@@ -30,6 +30,9 @@ zabbix_export:
           }
         
           var response, request = new HttpRequest();
+          // Add required headers for Cloudflare
+          request.addHeader('User-Agent: Zabbix');
+          request.addHeader('Content-Type: text/plain');
           // Check for proxy
           if (typeof params.HTTPProxy === 'string' && params.HTTPProxy.trim() !== '') {
               request.setProxy(params.HTTPProxy);
