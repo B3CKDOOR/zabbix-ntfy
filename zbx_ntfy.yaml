@@ -8,6 +8,8 @@ zabbix_export:
           value: '{ALERT.MESSAGE}'
         - name: Nseverity
           value: '{EVENT.NSEVERITY}'
+        - name: Nresolved
+          value: 2
         - name: Password
           value: '{$NTFY.PASS}'
         - name: Priority_average
