@@ -56,7 +56,7 @@ zabbix_export:
                   !isNaN(parseInt(value, 10));
           }
         
-          // If subject contains "Resolved", set Nseverity to "Priority_resolved"
+          // If subject contains "Resolved", set Nseverity to "Nresolved"
           if (params.Subject && typeof params.Subject === 'string' && params.Subject.toLowerCase().includes('resolved')) {
               params.Nseverity = params.Nresolved;
               if (!isInt(params.Nresolved) || params.Nresolved < 0 || params.Nresolved > 5){
