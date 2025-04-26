@@ -65,7 +65,7 @@ zabbix_export:
               throw 'Nseverity value must be passed as an int from 0-5';
           }
 
-          // If subject contains "Resolved", set Nseverity to "Nresolved"
+          // If subject contains "Resolved", override "Nseverity" to "Nresolved" value.
           if (params.Subject && typeof params.Subject === 'string' && params.Subject.toLowerCase().includes('resolved')) {
               params.Nseverity = params.Nresolved;
               if (!isInt(params.Nresolved) || params.Nresolved < 0 || params.Nresolved > 5){
