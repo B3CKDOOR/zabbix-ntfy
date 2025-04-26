@@ -31,7 +31,7 @@ zabbix_export:
         - name: Token
           value: '{$NTFY.TOKEN}'
         - name: Topic
-          value: '{$ALERT.SENDTO}'
+          value: '{ALERT.SENDTO}' //This value will be obtained from the users "Send To field" under "Users -> Users -> Media Type -> ntfy.sh"
         - name: URL
           value: '{$NTFY.URL}'
         - name: Username
